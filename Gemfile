@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt', '~> 3.1.7'
 
+
 gem 'webpacker', '~> 3.5'
 
 gem 'yt', '~> 0.29.1'
@@ -43,6 +44,11 @@ group :development, :test do
   gem 'vcr'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+end
+
+group :test do
+  gem 'rubocop-faker'
+  gem 'rake'
 end
 
 group :development do
