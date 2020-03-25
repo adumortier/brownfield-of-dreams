@@ -3,6 +3,11 @@ services:
   - postgresql
 addons:
   postgresql: 12.1
+apt:
+  packages:
+      - postgresql-12
+      - postgresql-client-12
+      - postgresql-contrib-12
 before_script:
   - psql -c 'create database brownfieldofdreams_test;' -U postgres
 rvm:
