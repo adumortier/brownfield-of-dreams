@@ -8,8 +8,11 @@ apt:
       - postgresql-12
       - postgresql-client-12
       - postgresql-contrib-12
+env:
+  global:
+  - PGPORT=5433
 before_script:
-  - psql -c 'create database brownfieldofdreams_test;' -U postgres
+  - psql -c 'create database brownfield_test;' -U postgres
 rvm:
 - 2.4.1
 script:
