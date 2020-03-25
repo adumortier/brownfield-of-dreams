@@ -4,7 +4,7 @@ language: ruby
 rvm:
 - 2.4.1
 script:
-- bundle exec rails db:migrate
+- bundle exec rails db:{create,migrate,seed}
 - bundle exec rspec
 - bundle exec rubocop
 dd:
