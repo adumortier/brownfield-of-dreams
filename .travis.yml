@@ -1,8 +1,10 @@
+language: ruby
 services:
   - postgresql
 addons:
   postgresql: 12.1
-language: ruby
+before_script:
+  - psql -c 'create database brownfieldofdreams_test;' -U postgres
 rvm:
 - 2.4.1
 script:
