@@ -11,12 +11,10 @@ apt:
 env:
   global:
   - PGPORT=5433
-before_script:
-  - psql -c 'create database brownfield_test;' -U postgres
 rvm:
 - 2.4.1
 script:
-- bundle exec rails db:{create,migrate,seed}
+- bundle exec rails db:{migrate,seed}
 - bundle exec rspec
 - bundle exec rubocop
 dd:
