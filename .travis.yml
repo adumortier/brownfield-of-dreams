@@ -1,17 +1,13 @@
 language: ruby
 rbenv:
   - 2.4.1
-
 addons:
   postgresql: 9.6
   chrome: stable
-
 dist: trusty
-
 before_script:
   - rm -r spec/cassettes
-
-  script:
+script:
 - yarn add stimulus
 - bundle exec rails db:{migrate,seed}
 - bundle exec rspec
