@@ -8,7 +8,6 @@ dist: trusty
 before_script:
   - rm -r spec/cassettes
 script:
-- yarn add stimulus
 - bundle exec rails db:{migrate,seed}
 - bundle exec rspec
 
