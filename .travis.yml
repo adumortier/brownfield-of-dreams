@@ -8,7 +8,7 @@ dist: trusty
 before_script:
   - rm -r spec/cassettes
 script:
-- bundle exec rails db:{migrate,seed}
+- bundle exec rails db:{create,migrate,seed}
 - bundle exec rspec
 
 dd:
