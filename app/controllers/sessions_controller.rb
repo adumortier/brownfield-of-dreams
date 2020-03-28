@@ -19,4 +19,10 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    user_info = request.env['omniauth.auth']
+    current_user.update_column(:token, user_info[:credentials][:token])
+    redirect_to '/dashboard'
+  end
+
 end
