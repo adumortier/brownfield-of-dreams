@@ -10,4 +10,26 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
+
+  <section id="github-repos">
+    <h1>Github Repositories</h1>
+    <% current_user.list_repositories.each do |repository| %>
+      <%= link_to repository.name, repository.link %>
+    <% end %>
+  </section>
+
+  <section id="github-followers">
+    <h1>Github Followers</h1>
+    <% current_user.list_followers.each do |follower| %>
+      <%= link_to follower.name, follower.link %>
+    <% end %>
+  </section>
+
+  <section id="github-following">
+    <h1>Github Following</h1>
+    <% current_user.list_following.each do |following| %>
+      <%= link_to following.name, following.link %>
+    <% end %>
+  </section>
+
 </section>
