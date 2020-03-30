@@ -1,21 +1,29 @@
 class GithubService
 
+  attr_reader :user_data, :user_followers, :user_following, :user_account
+
   def user_data(token)
-    response = conn.get("/user/repos?access_token=#{token}")
-    JSON.parse(response.body)
+    @user_data ||= get_json("/user/repos?access_token=#{token}")
   end
 
   def user_followers(token)
-    response = conn.get("/user/followers?access_token=#{token}")
-    JSON.parse(response.body)
+    @user_followers ||= get_json("/user/followers?access_token=#{token}")
   end
 
   def user_following(token)
-    response = conn.get("/user/following?access_token=#{token}")
-    JSON.parse(response.body)
+    @user_following ||= get_json("/user/following?access_token=#{token}")
+  end
+
+  def user_account(token)
+    @user_account ||= get_json("/user?access_token=#{token}")
   end
 
   private
+
+  def get_json(url)
+    response = conn.get(url)
+    JSON.parse(response.body)
+  end
 
   def conn
     Faraday.new(url: "https://api.github.com") 
