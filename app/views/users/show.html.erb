@@ -8,7 +8,12 @@
     <li> <%= current_user.email%> </li>
   </ul>
   <section>
+  <section id="bookmarks">
     <h1>Bookmarked Segments</h1>
+      <% current_user.list_bookmarks.each do |bookmark| %>
+        <p> <%= bookmark.tutorial.title %> -  <%= bookmark.title %> </p>
+      <% end %>
+    </section>
   </section>
 
   <% if current_user.token.nil? %>
