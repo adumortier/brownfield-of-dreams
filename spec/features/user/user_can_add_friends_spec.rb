@@ -25,7 +25,7 @@ RSpec.describe "As a logged in user" , type: :feature do
 
         within('section#github-followers') do 
           within('span#PaulDebevec') do 
-            click_link 'Add as Friend'
+            click_button 'Add as Friend'
           end
         end
 
