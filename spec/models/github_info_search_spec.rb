@@ -45,6 +45,12 @@ RSpec.describe GithubInfoSearch do
       end
     end
 
+    it "returns username" do
+      VCR.use_cassette('/github_info_search/returns_username') do
+        expect(@search.username).to eq('adumortier')
+      end
+    end
+
   end 
 
 end

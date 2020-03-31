@@ -1,33 +1,36 @@
 class GithubInfoSearch 
 
-  attr_reader :token
+  attr_reader :token, :repositories, :followers, :following
 
   def initialize(token)
     @token = token
+    @service = GithubService.new
   end
 
   def repositories
-    service = GithubService.new
-    repositories = service.user_data(@token).map do |repo_params|
+    @repositories ||= @service.user_data(@token).map do |repo_params|
       Repository.new({name: repo_params["name"], link: repo_params["html_url"]})
     end
-    repositories[0..4]
+    @repositories[0..4]
   end
 
   def followers
-    service = GithubService.new
-    followers = service.user_followers(@token).map do |follower_params|
-      Follower.new({login: follower_params["login"], url: follower_params["url"]})
+    @followers ||= @service.user_followers(@token).map do |follower_params|
+      Follower.new({login: follower_params["login"], url: follower_params["html_url"]})
     end
-    followers
+    @followers
   end
 
   def following
-    service = GithubService.new
-    following = service.user_following(@token).map do |following_params|
-      Following.new({login: following_params["login"], url: following_params["url"]})
+    @following ||= @service.user_following(@token).map do |following_params|
+      Following.new({login: following_params["login"], url: following_params["html_url"]})
     end
-    following
+    @following
+  end
+
+  def username
+    user_info = @service.user_account(@token)
+    return user_info["login"]
   end
 
 end
