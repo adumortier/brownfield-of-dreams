@@ -51,6 +51,14 @@ RSpec.describe GithubService do
       end
     end
 
+    it "#user_account" do 
+      VCR.use_cassette('/github_service/returns_user_account') do
+        token = ENV['GITHUB_USER1_TOKEN']
+        response = @service.user_account(token)
+        expect(response.has_key?("login")).to eq(true)
+      end
+    end
+
   end
 
 end
