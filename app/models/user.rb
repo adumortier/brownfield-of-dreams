@@ -46,7 +46,6 @@ class User < ApplicationRecord
     result
   end
 
-
   #   current_username = self.username
   #   @potential_friends ||= User.with_token.find_all do |user|
   #     user.list_following.map(&:name).include?(current_username) || user.list_followers.map(&:name).include?(current_username)
@@ -57,6 +56,15 @@ class User < ApplicationRecord
   #   end
   #   return result
   # end
+
+  def list_bookmarks
+    Video.select('videos.*, tutorials.id as tutorial_id, user_videos.user_id')
+          .joins(:tutorial)
+          .joins(:user_videos)
+          .where(user_videos: {user_id: self.id})
+          .order(:tutorial_id)
+          .order(:position)
+  end
 
   def self.with_token
     @users ||= User.where.not(token: [nil,""])
