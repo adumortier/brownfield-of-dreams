@@ -9,7 +9,11 @@ class User < ApplicationRecord
   validates_presence_of :password
   validates_presence_of :first_name
   enum role: [:default, :admin]
+  enum status: [:inactive, :active]
+  
   has_secure_password
+
+  before_create :confirmation_token
 
   def list_repositories
     
@@ -73,6 +77,20 @@ class User < ApplicationRecord
   def list_friends
     friends_id = Friendship.where(user_id: self.id).pluck(:friend_id)
     return User.where(id: friends_id)
+  end
+
+  def activate
+    self.status = 1
+    self.confirm_token = nil
+    save!(:validate => false)
+  end
+
+  private 
+
+  def confirmation_token
+    if self.confirm_token.blank?
+      self.confirm_token = SecureRandom.urlsafe_base64.to_s
+    end
   end
 
 end

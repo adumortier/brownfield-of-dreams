@@ -42,6 +42,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :update, :edit]
 
+  get '/users/confirm_email', to: 'users#confirm_email'
+
   resources :tutorials, only: [:show, :index] do
     resources :videos, only: [:show, :index]
   end

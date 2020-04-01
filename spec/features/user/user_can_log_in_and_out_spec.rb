@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User' do
-  xit 'user can sign in' do
+  it 'user can sign in' do
     VCR.use_cassette('/user/user_can_sign_in') do
       user = create(:user)
 
@@ -23,7 +23,7 @@ describe 'User' do
     end
   end
 
-  xit 'can log out', :js do
+  it 'can log out', :js do
     VCR.use_cassette('/user/user_can_sign_out') do
       user = create(:user)
 

@@ -1,0 +1,13 @@
+Hello <%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%>! <br>
+
+<p> Thank you for registering with Brownfield of Dreams. </p> 
+
+<p> You're just one click away from accessing the video content of the Turing School of Software and Design. </p>
+
+<p> To activate your account, please click the link below: </p>
+
+<% if Rails.env.production? %>
+  <%= link_to "TheBrownfieldOfDreams", "https://thebrownfieldofdream.herokuapp.com/users/confirm_email?token=#{@user.confirm_token}" %>  
+<% else %>
+  <%= link_to "TheBrownfieldOfDreams", "http://localhost:3000/users/confirm_email?token=#{@user.confirm_token}" %>
+<% end %>
