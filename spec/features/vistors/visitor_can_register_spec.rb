@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'vister can create an account', :js do
-  xit ' visits the home page' do
+  it ' visits the home page' do
     email = 'jimbob@aol.com'
     first_name = 'Jim'
     last_name = 'Bob'
@@ -26,11 +26,14 @@ describe 'vister can create an account', :js do
 
       click_on'Create Account'
 
+      expect(page).to have_content("Logged in as #{first_name} #{last_name}")
+      expect(page).to have_content("This account has not yet been activated. Please check your email.")
+      
       expect(current_path).to eq(dashboard_path)
 
-      expect(page).to have_content(email)
-      expect(page).to have_content(first_name)
-      expect(page).to have_content(last_name)
+      # expect(page).to have_content(email)
+      # expect(page).to have_content(first_name)
+      # expect(page).to have_content(last_name)
       expect(page).to_not have_content('Sign In')
     end
 
