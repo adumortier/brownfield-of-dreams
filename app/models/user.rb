@@ -10,13 +10,12 @@ class User < ApplicationRecord
   validates_presence_of :first_name
   enum role: [:default, :admin]
   enum status: [:inactive, :active]
-  
+
   has_secure_password
 
   before_create :confirmation_token
 
   def list_repositories
-    
     search = GithubInfoSearch.new(token)
     return search.repositories
   end
