@@ -29,6 +29,21 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.sendgrid.net',
+    port:                 '587',
+    domain:               'example.com',
+    user_name:            ENV["SENDGRID_USERNAME"],
+    password:             ENV["SENDGRID_PASSWORD"],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
+  # Do not swallow errors in after_commit/after_rollback callbacks.
+  config.active_record.raise_in_transactional_callbacks = true
+  
   config.assets.compile = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
