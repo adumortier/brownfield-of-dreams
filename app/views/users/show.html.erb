@@ -1,5 +1,5 @@
 <section class="dashboard-main">
-  <h1> <%= current_user.first_name %>'s Dashboard </h1>
+  <h1> <%= current_user.first_name.capitalize %>'s Dashboard </h1>
 
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
@@ -9,15 +9,17 @@
   </ul>
   <section>
 
-  <%= link_to "Send an Invite", invite_path, class: "video-position-submit btn btn-outline"  %> <br>
+  <%= link_to "Send an Invite", invite_path, class: "video-position-submit btn btn-outline"  %> <br> <br>
 
   <section id="bookmarks">
-    <h1>Bookmarked Segments</h1>
+    <% if !current_user.list_bookmarks.empty? %>
+      <h1>Bookmarked Segments</h1>
       <% current_user.list_bookmarks.each do |bookmark| %>
         <p> <%= bookmark.tutorial.title %> -  <%= bookmark.title %> </p>
       <% end %>
-    </section>
+    <% end %>
   </section>
+
 
   <% if current_user.token.nil? %>
     <%= link_to "Connect to Github", github_login_path, class: "video-position-submit btn btn-outline" %>
