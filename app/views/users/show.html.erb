@@ -24,18 +24,19 @@
   <% if current_user.token.nil? %>
     <%= link_to "Connect to Github", github_login_path, class: "video-position-submit btn btn-outline" %>
   <% else %>
-    <section id="github-repos">
-      <h1>Github Repositories</h1>
-      <% current_user.list_repositories.each do |repository| %>
-        <%= link_to repository.name, repository.link %> <br>
-      <% end %>
+    <section class="github-repos">
+    <h1>Github Repositories</h1>
+    <% current_user.list_repositories.each do |repository| %>
+        <%= link_to repository.name, repository.link, class: "repo_title"%> <br>
+    <% end %>
     </section>
+    
 
-    <section id="github-followers">
+    <section class="github-followers">
       <h1>Github Followers</h1>
       <% current_user.list_followers.each do |follower| %>
         <span id=<%= follower.name%> >
-          <%= link_to follower.name, follower.link %> 
+          <%= link_to follower.name, follower.link, class: "follower_name"%> 
           <% if current_user.potential_friends.keys.include?(follower.name) %>
             <%= button_to "Add as Friend", "/friendships/#{current_user.id}/#{current_user.potential_friends[follower.name]}", method: :post %> 
           <% end %> <br> 
@@ -43,10 +44,10 @@
       <% end %>
     </section>
 
-    <section id="github-following">
+    <section class="github-following">
       <h1>Github Following</h1>
       <% current_user.list_following.each do |following| %>
-        <%= link_to following.name, following.link %> 
+        <%= link_to following.name, following.link, class: "following_name" %> 
         <% if current_user.potential_friends.include?(following.name) %>
           <%= button_to "Add as Friend", "/friendships/#{current_user.id}/#{current_user.potential_friends[following.name]}", method: :post %> 
          <% end %> <br>

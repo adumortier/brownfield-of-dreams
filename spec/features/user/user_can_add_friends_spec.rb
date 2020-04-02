@@ -23,7 +23,7 @@ RSpec.describe "As a logged in user" , type: :feature do
           expect(page).to_not have_content('PaulDebevec')
         end
 
-        within('section#github-followers') do 
+        within('.github-followers') do 
           within('span#PaulDebevec') do 
             click_button 'Add as Friend'
           end
