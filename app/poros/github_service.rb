@@ -22,10 +22,6 @@ class GithubService
     @user_info = get_json("/users/#{user_name}")
   end
 
-  def get_public_events(user_name)
-    @user_events = get_json("/users/#{user_name}/events/public")
-  end
-
   private
 
   def get_json(url)
