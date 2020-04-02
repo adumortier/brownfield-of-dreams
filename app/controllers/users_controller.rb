@@ -21,10 +21,9 @@ class UsersController < ApplicationController
   end
 
   def confirm_email
-    require 'pry'; binding.pry
-    Rails.env.production?
     user = User.find_by_confirm_token(params[:token])
     if user 
+      user.activate
       flash[:success] = "Welcome to the Brownfield of Dreams! Your account is activated."
       redirect_to '/dashboard'
     else
