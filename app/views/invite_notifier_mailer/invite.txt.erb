@@ -1,0 +1,10 @@
+Hello! 
+
+<p> <%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%> thought you'd be interested in this very cool app called Brownfield of Dreams </p>
+<p> Check it out at by clicking the link below : </p>
+
+<% if Rails.env.production? %>
+  <%= link_to "TheBrownfieldOfDreams", "https://thebrownfieldofdream.herokuapp.com" %>  
+<% else %>
+  <%= link_to "TheBrownfieldOfDreams", "http://localhost:3000" %>
+<% end %>

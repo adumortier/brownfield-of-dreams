@@ -8,10 +8,10 @@ RSpec.describe "As a logged in user" , type: :feature do
 
       VCR.use_cassette('/user/user_can_see_list_of_repos') do
 
-      user1_params = {email: 'dumortier.alexis@gmail.com', first_name: 'Alexis', last_name: 'Dumortier', password_digest: 'temp', role: 0, token: ENV['GITHUB_USER1_TOKEN']}
+      user1_params = {email: 'dumortier.alexis@gmail.com', first_name: 'Alexis', last_name: 'Dumortier', password: 'temp', role: 0, token: ENV['GITHUB_USER1_TOKEN']}
       user1 = User.create(user1_params)
 
-      user2_params = {email: 'paul.@gmail.com', first_name: 'Paul', last_name: 'Debevec', password_digest: 'temp', role: 0, token: ENV['GITHUB_USER2_TOKEN']}
+      user2_params = {email: 'paul.@gmail.com', first_name: 'Paul', last_name: 'Debevec', password: 'temp', role: 0, token: ENV['GITHUB_USER2_TOKEN']}
       user2 = User.create(user2_params)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
@@ -37,7 +37,7 @@ RSpec.describe "As a logged in user" , type: :feature do
 
       VCR.use_cassette('/user/user_can_see_list_of_followers') do
 
-        user_params = {email: 'dumortier.alexis@gmail.com', first_name: 'Alexis', last_name: 'Dumortier', password_digest: 'temp', role: 0, token: ENV['GITHUB_USER1_TOKEN']}
+        user_params = {email: 'dumortier.alexis@gmail.com', first_name: 'Alexis', last_name: 'Dumortier', password: 'temp', role: 0, token: ENV['GITHUB_USER1_TOKEN']}
         user = User.create(user_params)
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -60,7 +60,7 @@ RSpec.describe "As a logged in user" , type: :feature do
 
       VCR.use_cassette('/user/user_can_see_list_of_following') do
 
-        user_params = {email: 'dumortier.alexis@gmail.com', first_name: 'Alexis', last_name: 'Dumortier', password_digest: 'temp', role: 0, token: ENV['GITHUB_USER1_TOKEN']}
+        user_params = {email: 'dumortier.alexis@gmail.com', first_name: 'Alexis', last_name: 'Dumortier', password: 'temp', role: 0, token: ENV['GITHUB_USER1_TOKEN']}
         user = User.create(user_params)
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 

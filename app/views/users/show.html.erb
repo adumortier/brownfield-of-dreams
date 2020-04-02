@@ -8,6 +8,9 @@
     <li> <%= current_user.email%> </li>
   </ul>
   <section>
+
+  <%= link_to "Send an Invite", invite_path, class: "video-position-submit btn btn-outline"  %> <br>
+
   <section id="bookmarks">
     <h1>Bookmarked Segments</h1>
       <% current_user.list_bookmarks.each do |bookmark| %>
