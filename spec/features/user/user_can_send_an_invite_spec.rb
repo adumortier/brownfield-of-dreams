@@ -6,7 +6,14 @@ RSpec.describe "As a logged in user" , type: :feature do
 
     it "the invitation is sent only if I entered a valid github handle" do 
 
-      VCR.use_cassette('/user/user_can_send_an_invite') do
+        response_user_with_email = File.read('spec/fixtures/user_with_email_info.json')
+        stub_request(:get, "https://api.github.com/users/adumortier").to_return(status: 200, body: response_user_with_email)
+
+        response_user_without_email = File.read('spec/fixtures/user_without_email_info.json')
+        stub_request(:get, "https://api.github.com/users/iEv0lv3").to_return(status: 200, body: response_user_without_email)
+
+        response_invalid_user = File.read('spec/fixtures/invalid_user_info.json')
+        stub_request(:get, "https://api.github.com/users/adswqrdfgfg").to_return(status: 200, body: response_invalid_user)
 
         user1 = User.create!(
                             email: 'dumortier.alexis@gmail.com', 
@@ -54,5 +61,4 @@ RSpec.describe "As a logged in user" , type: :feature do
       end
 
     end
-  end
 end
