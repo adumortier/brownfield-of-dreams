@@ -18,6 +18,14 @@ class GithubService
     @user_account ||= get_json("/user?access_token=#{token}")
   end
 
+  def get_user(user_name)
+    @user_info = get_json("/users/#{user_name}")
+  end
+
+  def get_public_events(user_name)
+    @user_events = get_json("/users/#{user_name}/events/public")
+  end
+
   private
 
   def get_json(url)
