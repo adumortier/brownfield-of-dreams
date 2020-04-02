@@ -6,12 +6,11 @@ Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouT
 
 Continuous Integration was setup with Travis CI. 
 
-## Contributors
+### Contributors
 
 [Alexis Dumortier](https://github.com/adumortier)
 
 [Paul Debevec](https://github.com/PaulDebevec) 
-
 
 ### Set Up Instructions
 
