@@ -10,7 +10,7 @@ class UserVideosController < ApplicationController
       elsif user_video.save
         flash[:success] = "Bookmark added to your dashboard!"
       end
-    else 
+    else
       flash[:failed] = "User must login to bookmark videos."
     end
     redirect_back(fallback_location: root_path)
