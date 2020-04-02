@@ -1,5 +1,4 @@
 class GithubService
-
   attr_reader :user_data, :user_followers, :user_following, :user_account
 
   def user_data(token)
@@ -30,7 +29,6 @@ class GithubService
   end
 
   def conn
-    Faraday.new(url: "https://api.github.com") 
+    Faraday.new(url: 'https://api.github.com')
   end
-
 end
