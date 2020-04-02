@@ -15,23 +15,29 @@ class User < ApplicationRecord
 
   before_create :confirmation_token
 
+  attr_reader :list_following, :list_followers, :list_repositories, :search
+
+
   def list_repositories
-    search = GithubInfoSearch.new(token)
-    return search.repositories
+    @search ||= GithubInfoSearch.new(token)
+    @list_repositories = search.repositories
+    return @list_repositories
   end
 
   def list_followers
-    search = GithubInfoSearch.new(token)
-    return search.followers
+    @search ||= GithubInfoSearch.new(token)
+    @list_followers ||= search.followers
+    return @list_followers
   end
 
   def list_following
-    search = GithubInfoSearch.new(token)
-    return search.following
+    @search ||= GithubInfoSearch.new(token)
+    @list_following ||= search.following
+    return @list_following
   end
 
   def username
-    search = GithubInfoSearch.new(token)
+    @search ||= GithubInfoSearch.new(token)
     return search.username
   end
 
