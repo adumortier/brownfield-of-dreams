@@ -4,6 +4,11 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
+    @tutorial = Tutorial.create!(title: tutorial_params[:title], 
+                                description: tutorial_params[:description],
+                                thumbnail: tutorial_params[:thumbnail],
+                              )
+    redirect_to admin_dashboard_path
   end
 
   def new
@@ -28,6 +33,6 @@ class Admin::TutorialsController < Admin::BaseController
 
   private
   def tutorial_params
-    params.require(:tutorial).permit(:tag_list)
+    params.require(:tutorial).permit(:tag_list, :title, :description, :thumbnail)
   end
 end
