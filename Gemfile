@@ -11,9 +11,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt', '~> 3.1.7'
+gem 'omniauth-github'
 
 gem 'webpacker', '~> 3.5'
-
 gem 'yt', '~> 0.29.1'
 gem 'google-api-client'
 gem 'faraday'
@@ -40,9 +40,14 @@ group :development, :test do
   gem 'awesome_print'
   gem 'webmock'
   gem 'simplecov'
-  gem 'vcr'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'rubocop-faker'
+  gem 'rake'
 end
 
 group :development do

@@ -1,5 +1,5 @@
 <section class="dashboard-main">
-  <h1> <%= current_user.first_name %>'s Dashboard </h1>
+  <h1> <%= current_user.first_name.capitalize %>'s Dashboard </h1>
 
   <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
@@ -8,6 +8,58 @@
     <li> <%= current_user.email%> </li>
   </ul>
   <section>
-    <h1>Bookmarked Segments</h1>
+
+  <%= link_to "Send an Invite", invite_path, class: "video-position-submit btn btn-outline"  %> <br> <br>
+
+  <section id="bookmarks">
+    <% if !current_user.list_bookmarks.empty? %>
+      <h1>Bookmarked Segments</h1>
+      <% current_user.list_bookmarks.each do |bookmark| %>
+        <p> <%= bookmark.tutorial.title %> -  <%= bookmark.title %> </p>
+      <% end %>
+    <% end %>
   </section>
+
+
+  <% if current_user.token.nil? %>
+    <%= link_to "Connect to Github", github_login_path, class: "video-position-submit btn btn-outline" %>
+  <% else %>
+    <section id="github-repos">
+      <h1>Github Repositories</h1>
+      <% current_user.list_repositories.each do |repository| %>
+        <%= link_to repository.name, repository.link %> <br>
+      <% end %>
+    </section>
+
+    <section id="github-followers">
+      <h1>Github Followers</h1>
+      <% current_user.list_followers.each do |follower| %>
+        <span id=<%= follower.name%> >
+          <%= link_to follower.name, follower.link %> 
+          <% if current_user.potential_friends.keys.include?(follower.name) %>
+            <%= button_to "Add as Friend", "/friendships/#{current_user.id}/#{current_user.potential_friends[follower.name]}", method: :post %> 
+          <% end %> <br> 
+        </span>
+      <% end %>
+    </section>
+
+    <section id="github-following">
+      <h1>Github Following</h1>
+      <% current_user.list_following.each do |following| %>
+        <%= link_to following.name, following.link %> 
+        <% if current_user.potential_friends.include?(following.name) %>
+          <%= button_to "Add as Friend", "/friendships/#{current_user.id}/#{current_user.potential_friends[following.name]}", method: :post %> 
+         <% end %> <br>
+      <% end %>
+    </section>
+     
+    <section id="friends">
+      <h1>Friends</h1>
+        <% current_user.list_friends.each do |friend| %>
+           <%= friend.first_name %> <%= friend.last_name %> 
+         <% end %> <br>
+    </section>
+    
+  <% end %>
+
 </section>

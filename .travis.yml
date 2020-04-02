@@ -1,0 +1,15 @@
+language: ruby
+rbenv:
+  - 2.4.1
+addons:
+  postgresql: 9.6
+  chrome: stable
+dist: trusty
+before_script:
+  - rm -r spec/cassettes
+script:
+- bundle exec rails db:{create,migrate,seed}
+- bundle exec rspec
+
+dd:
+  secure: CR7AhShYNNmh/KpBocQoAgcokHmcV46/vparbsxp8Mq3KSquBj4bJje1mL7JfXKu+G7PerZTlvgAk95qIwsICv1KyVfxXF5okLboPPEB5YrAjwsmygH0ehfpyQH3VmoBJujH0ESu+zrEElfK4cXW6z6DWW8qpdoieM/jQM7YEeMjpKjPmKpB9Tc2a8xvOhW4Dj+PtLjdzY5t2ZVBxgoWZCCrcGHA5oYUlyXuYAx33rDFHaKcgEPc4YJixA4jGSKwWl0VsV7kKq+RIUIVc3h3YHXk4TaLA5ZWV/0Ep8HPGiIFdNp0EekKglIZ34+MuOVKGv9qJ/rJMuk6E0Qi9eXKpykTn/KosRbj2A4W4ehTUU9YtzNOcveJcGoPF2hXoUE9CblnntLZH0W7pGqoRNJsDhoLk0SXyfUClWk6a1mt3rFcM5JA4fZJzJEnxV4ts6B3RiFdst3+EzMn95H1HEFKLHvUZj6Xw1Bc4jfQqJjXstZNjt4zFe/wiXS4kh7XDjX0q2zrUgCY0CrLx+7JDlhQ5soa5DVSrlH35VI2CpoVqptZs4QoWNBR2q5n1sdgHx4d1+Y9AMeAZAvA79TUqXoHJcVXqOsjzsjzy4CsLCNrDXOD5NXS1PYXTquW/zxZliPJVpC/iqYeTkEqKlL8b8LVbRZ5JG5LnrkaCuyev6JyM5Q=

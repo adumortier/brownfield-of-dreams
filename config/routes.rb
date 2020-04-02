@@ -24,18 +24,29 @@ Rails.application.routes.draw do
     end
   end
 
+  
+  get '/invite', to: "invites#new" 
+  post '/invite', to: "invites#create"
+
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
+  
+  get '/auth/github', as: "github_login"
+  get '/auth/:provider/callback', to: "sessions#update"
 
   get '/dashboard', to: 'users#show'
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
 
+  post '/friendships/:user_id/:friend_id', to: "friendships#create"
+
   # Is this being used?
   get '/video', to: 'video#show'
 
   resources :users, only: [:new, :create, :update, :edit]
+
+  get '/users/confirm_email', to: 'users#confirm_email'
 
   resources :tutorials, only: [:show, :index] do
     resources :videos, only: [:show, :index]

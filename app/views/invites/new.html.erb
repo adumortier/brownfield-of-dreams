@@ -1,0 +1,8 @@
+<br> <br>
+<%= form_for @invite, url: invite_path(@invite), html: { method: :post } do |f| %>
+
+  <%= f.label :github_handle %>
+  <%= f.text_field :github_handle %>
+  <%= f.submit("Send Invite") %>
+
+<% end %>

@@ -13,9 +13,9 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
   config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
   config.filter_sensitive_data("<YOUTUBE_API_KEY>") { ENV['YOUTUBE_API_KEY'] }
 end
-
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -28,6 +28,7 @@ Capybara.javascript_driver = :selenium_chrome_headless
 
 Capybara.configure do |config|
   config.default_max_wait_time = 5
+  config.server = :puma, { Silent: true}
 end
 
 SimpleCov.start "rails"
