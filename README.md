@@ -1,15 +1,25 @@
 # Brownfield Of Dreams
 
-### About Brownfield Of Dreams
+### About the Project
 
-This is a Ruby on Rails application used to organize YouTube content used for online learning. Each tutorial is a playlist of video segments. Within the application an admin is able to create tags for each tutorial in the database. A visitor or registered user can then filter tutorials based on these tags.
+Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouTube content used for online learning. Assigned as a paired project, we worked across a period of ten days to implement new functionalities to the platform: an external API consumption, OAuth functionality (through GitHub), email activation of accounts, email invitation of users, bookmarking, adding other users as friends. 
 
-A visitor is able to see all of the content on the application but in order to bookmark a segment they will need to register. Once registered a user can bookmark any of the segments in a tutorial page.
+Continuous Integration was setup with Travis CI. 
+
+## Contributors
+
+[Alexis Dumortier](https://github.com/adumortier)
+
+[Paul Debevec](https://github.com/PaulDebevec) 
+
 
 ### Set Up Instructions
 
 First you'll need to setup an API key with YouTube and have it defined within `ENV['YOUTUBE_API_KEY']`. There will be one failing spec if you don't have this set up.
 
+You will also need a GitHub Application `client_id` and `client_secret` and defined them as  `ENV['GITHUB_CLIENT_ID']` and 
+  `ENV['GITHUB_CLIENT_SECRET']`.
+  
 To setup BrownFieldOfDreams locally, run the following commands:
 
 `git clone https://github.com/adumortier/brownfield-of-dreams`
