@@ -6,15 +6,13 @@ Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouT
 
 Continuous Integration was setup with Travis CI. 
 
+Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
+
 ### Contributors
 
 [Alexis Dumortier](https://github.com/adumortier)
 
 [Paul Debevec](https://github.com/PaulDebevec) 
-
-### Schema
-
-![alt text](app/assets/images/scheme_brownfield.png)
 
 ### Set Up Instructions
 
@@ -58,12 +56,14 @@ Create a new heroku app and connect to your local `BrownFieldOfDreams` repositor
 
 `heroku git:remote -a your_heroku_app_name`
 
-Deploy `BrownFieldOfDreams` from heroku.
+Deploy `BrownFieldOfDreams` from Heroku.
 
-The original repository of the `BrownFieldOfDreams` project can be found at:
+The original repository of the `BrownFieldOfDreams` project can be found [here](https://github.com/turingschool-examples/brownfield-of-dreams).
 
-https://github.com/turingschool-examples/brownfield-of-dreams
 
+### Schema Design
+
+![alt text](app/assets/images/scheme_brownfield.png)
 
 ## Technologies
 * [Stimulus](https://github.com/stimulusjs/stimulus)
