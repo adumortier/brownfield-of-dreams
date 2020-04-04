@@ -12,6 +12,10 @@ Continuous Integration was setup with Travis CI.
 
 [Paul Debevec](https://github.com/PaulDebevec) 
 
+### Schema
+
+![alt text](app/assets/images/schema_brownfield.png)
+
 ### Set Up Instructions
 
 First you'll need to setup an API key with YouTube and have it defined within `ENV['YOUTUBE_API_KEY']`. There will be one failing spec if you don't have this set up.
