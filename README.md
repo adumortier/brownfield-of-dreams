@@ -19,7 +19,7 @@ First you'll need to setup an API key with YouTube and have it defined within `E
 You will also need a GitHub Application `client_id` and `client_secret` and defined them as  `ENV['GITHUB_CLIENT_ID']` and 
   `ENV['GITHUB_CLIENT_SECRET']`.
   
-To setup BrownFieldOfDreams locally, run the following commands:
+To setup Brownfield Of Dreams locally, run the following commands:
 
 `git clone https://github.com/adumortier/brownfield-of-dreams`
 
