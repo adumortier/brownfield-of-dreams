@@ -14,7 +14,7 @@ Continuous Integration was setup with Travis CI.
 
 ### Schema
 
-![alt text](app/assets/images/schema_brownfield.png)
+![alt text](app/assets/images/scheme_brownfield.png)
 
 ### Set Up Instructions
 
