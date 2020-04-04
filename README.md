@@ -13,7 +13,7 @@ We worked for a period of ten days on this paired project to implement new funct
 * bookmarking of video segments
 * addition of other users as friends. 
 
-Continuous Integration was setup with Travis CI. 
+We also setup Continuous Integration using Travis CI. 
 
 Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
 ___
