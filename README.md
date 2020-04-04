@@ -3,12 +3,12 @@
 ### About the Project
 
 Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouTube content used for online learning. Assigned as a paired project, we worked across a period of ten days to implement new functionalities to the platform: 
-⋅⋅* external API consumption (GitHub)
-⋅⋅* OAuth functionality (through GitHub)
-⋅⋅* email activation of accounts
-⋅⋅* email invitation of GitHub users
-⋅⋅* bookmarking of video segments
-⋅⋅* addition of other users as friends. 
+* external API consumption (GitHub)
+* OAuth functionality (through GitHub)
+* email activation of accounts
+* email invitation of GitHub users
+* bookmarking of video segments
+* addition of other users as friends. 
 
 Continuous Integration was setup with Travis CI. 
 
