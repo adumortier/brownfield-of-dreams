@@ -7,13 +7,13 @@ Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouT
 Continuous Integration was setup with Travis CI. 
 
 Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
-
+___
 ### Contributors
 
 [Alexis Dumortier](https://github.com/adumortier)
 
 [Paul Debevec](https://github.com/PaulDebevec) 
-
+___
 ### Set Up Instructions
 
 First you'll need to setup an API key with YouTube and have it defined within `ENV['YOUTUBE_API_KEY']`. There will be one failing spec if you don't have this set up.
@@ -59,12 +59,11 @@ Create a new heroku app and connect to your local `BrownFieldOfDreams` repositor
 Deploy `BrownFieldOfDreams` from Heroku.
 
 The original repository of the `BrownFieldOfDreams` project can be found [here](https://github.com/turingschool-examples/brownfield-of-dreams).
-
-
+___
 ### Schema Design
 
 ![alt text](app/assets/images/scheme_brownfield.png)
-
+___
 ## Technologies
 * [Stimulus](https://github.com/stimulusjs/stimulus)
 * [will_paginate](https://github.com/mislav/will_paginate)
@@ -73,7 +72,7 @@ The original repository of the `BrownFieldOfDreams` project can be found [here](
 * [vcr](https://github.com/vcr/vcr)
 * [selenium-webdriver](https://www.seleniumhq.org/docs/03_webdriver.jsp)
 * [chromedriver-helper](http://chromedriver.chromium.org/)
-
+___
 ### Versions
 * Ruby 2.4.1
 * Rails 5.2.0
