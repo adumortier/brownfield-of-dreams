@@ -2,7 +2,10 @@
 
 ### About the Project
 
-Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouTube content used for online learning. Assigned as a paired project, we worked across a period of ten days to implement new functionalities to the platform: 
+Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouTube content used for online learning. 
+
+We worked for a period of ten days on this paired project to implement new functionalities to the platform: 
+
 * external API consumption (GitHub)
 * OAuth functionality (through GitHub)
 * email activation of accounts
