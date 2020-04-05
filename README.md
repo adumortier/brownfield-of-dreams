@@ -17,7 +17,7 @@ We also setup Continuous Integration using Travis CI.
 
 Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
 
-![Watch a Demo](app/assets/images/demo.gif)
+![alt text](app/assets/images/demo.gif)
 ___
 ### Contributors
 
