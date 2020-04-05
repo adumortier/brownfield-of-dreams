@@ -16,6 +16,8 @@ We worked for a period of ten days on this paired project to implement new funct
 We also setup Continuous Integration using Travis CI. 
 
 Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
+
+![Watch a Demo](app/assets/images/demo.gif)
 ___
 ### Contributors
 
