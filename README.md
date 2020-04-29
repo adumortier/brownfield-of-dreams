@@ -1,5 +1,7 @@
 # Brownfield Of Dreams
 
+[![Build Status](https://travis-ci.com/adumortier/brownfield-of-dreams.svg?branch=master)](https://travis-ci.com/github/adumortier/brownfield-of-dreams)
+
 ### About the Project
 
 Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouTube content used for online learning. 
