@@ -38,7 +38,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
-  gem 'simplecov'
+  gem 'simplecov', require: false, group: :test
+  gem 'codecov', require: false, group: :test
   gem 'webdrivers'
   gem 'webmock'
 end

@@ -7,6 +7,10 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'vcr'
 require 'webmock/rspec'
+require 'simplecov'
+SimpleCov.start
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
 VCR.configure do |config|
   config.ignore_localhost = true
@@ -31,7 +35,7 @@ Capybara.configure do |config|
   config.server = :puma, { Silent: true }
 end
 
-SimpleCov.start 'rails'
+# SimpleCov.start 'rails'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
