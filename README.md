@@ -1,6 +1,6 @@
 # Brownfield Of Dreams
-
-[![Build Status](https://travis-ci.com/adumortier/brownfield-of-dreams.svg?branch=master)](https://travis-ci.com/github/adumortier/brownfield-of-dreams)
+<!---!
+[![Build Status](https://travis-ci.com/adumortier/brownfield-of-dreams.svg?branch=master)](https://travis-ci.com/github/adumortier/brownfield-of-dreams)--->
 
 ### About the Project
 
