@@ -3,7 +3,20 @@
 
 # Brownfield Of Dreams
 
-### About the Project
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+  * [Schema](#schema)
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+  * [Deployment](#deployment)
+  * [Testing](#testing)
+* [Contributors](#contributors)
+
+___
+## About the Project
 
 Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouTube content used for online learning. 
 
@@ -21,14 +34,24 @@ We also set up Continuous Integration using Travis CI.
 Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
 
 ![alt text](app/assets/images/demo.gif)
-___
-### Contributors
 
-[Alexis Dumortier](https://github.com/adumortier)
+### Built With:
 
-[Paul Debevec](https://github.com/PaulDebevec) 
+* [Stimulus](https://github.com/stimulusjs/stimulus)
+* [will_paginate](https://github.com/mislav/will_paginate)
+* [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
+* [webpacker](https://github.com/rails/webpacker)
+* [vcr](https://github.com/vcr/vcr)
+* [selenium-webdriver](https://www.seleniumhq.org/docs/03_webdriver.jsp)
+* [chromedriver-helper](http://chromedriver.chromium.org/)
+
+### Schema Design
+
+![alt text](app/assets/images/scheme_brownfield.png)
 ___
-### Set Up Instructions
+## Getting Started
+
+### Installation
 
 First you'll need to setup an API key with YouTube and have it defined within `ENV['YOUTUBE_API_KEY']`. There will be one failing spec if you don't have this set up.
 
@@ -65,6 +88,7 @@ Run the test suite:
 ```ruby
 $ bundle exec rspec
 ```
+### Deployment
 
 Create a new heroku app and connect to your local `BrownFieldOfDreams` repository with:
 
@@ -74,19 +98,13 @@ Deploy `BrownFieldOfDreams` from Heroku.
 
 The original repository of the `BrownFieldOfDreams` project can be found [here](https://github.com/turingschool-examples/brownfield-of-dreams).
 ___
-### Schema Design
 
-![alt text](app/assets/images/scheme_brownfield.png)
-___
-## Technologies
-* [Stimulus](https://github.com/stimulusjs/stimulus)
-* [will_paginate](https://github.com/mislav/will_paginate)
-* [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
-* [webpacker](https://github.com/rails/webpacker)
-* [vcr](https://github.com/vcr/vcr)
-* [selenium-webdriver](https://www.seleniumhq.org/docs/03_webdriver.jsp)
-* [chromedriver-helper](http://chromedriver.chromium.org/)
-___
 ### Versions
 * Ruby 2.4.1
 * Rails 5.2.0
+
+## Contributors
+
+[Alexis Dumortier](https://github.com/adumortier)
+
+[Paul Debevec](https://github.com/PaulDebevec) 
