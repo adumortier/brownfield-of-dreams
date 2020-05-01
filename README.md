@@ -62,16 +62,17 @@ You will also need a GitHub Application `client_id` and `client_secret` and defi
   `ENV['GITHUB_CLIENT_SECRET']`.
   
 To setup Brownfield Of Dreams locally, run the following commands:
+```
+git clone https://github.com/adumortier/brownfield-of-dreams
 
-`git clone https://github.com/adumortier/brownfield-of-dreams`
+cd brownfield-of-dreams
 
-`brownfield-of-dreams`
+bundle install
 
-`bundle install`
+bundle update
 
-`bundle update`
-
-`rails db:{drop,create,migrate,seed}`
+rails db:{drop,create,migrate,seed}
+```
 
 Install node packages for stimulus
 ```
@@ -96,8 +97,9 @@ $ bundle exec rspec
 ### Deployment
 
 Create a new heroku app and connect to your local `BrownFieldOfDreams` repository with:
-
-`heroku git:remote -a your_heroku_app_name`
+```
+heroku git:remote -a your_heroku_app_name
+```
 
 Deploy `BrownFieldOfDreams` from Heroku.
 
