@@ -2,13 +2,13 @@
 [![codecov](https://codecov.io/gh/adumortier/brownfield-of-dreams/branch/master/graph/badge.svg)](https://codecov.io/gh/adumortier/brownfield-of-dreams)
 
 # Brownfield Of Dreams
-
+___
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-  * [Schema](#schema)
+  * [Schema](#schema-design)
 * [Getting Started](#getting-started)
   * [Installation](#installation)
   * [Deployment](#deployment)
