@@ -2,7 +2,7 @@
 [![codecov](https://codecov.io/gh/adumortier/brownfield-of-dreams/branch/master/graph/badge.svg)](https://codecov.io/gh/adumortier/brownfield-of-dreams)
 
 # Brownfield Of Dreams
-___
+
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
@@ -15,7 +15,7 @@ ___
   * [Deployment](#deployment)
 * [Contributors](#contributors)
 
-___
+
 ## About the Project
 
 Brownfield Of Dreams is a Ruby on Rails brownfield project used to organize YouTube content used for online learning. 
@@ -48,7 +48,7 @@ Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
 ### Schema Design
 
 ![alt text](app/assets/images/scheme_brownfield.png)
-___
+
 ## Getting Started
 
 ### Installation
@@ -99,7 +99,7 @@ Create a new heroku app and connect to your local `BrownFieldOfDreams` repositor
 Deploy `BrownFieldOfDreams` from Heroku.
 
 The original repository of the `BrownFieldOfDreams` project can be found [here](https://github.com/turingschool-examples/brownfield-of-dreams).
-___
+
 
 ### Versions
 * Ruby 2.4.1
