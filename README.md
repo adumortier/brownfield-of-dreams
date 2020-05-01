@@ -7,6 +7,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+  * [Demo](#demo)
   * [Built With](#built-with)
   * [Schema Design](#schema-design)
 * [Getting Started](#getting-started)
@@ -32,6 +33,8 @@ We worked for a period of ten days on this paired project to implement new funct
 We also set up Continuous Integration using Travis CI. 
 
 Launch the Heroku [app](https://thebrownfieldofdream.herokuapp.com/)
+
+### Demo
 
 ![alt text](app/assets/images/demo.gif)
 
