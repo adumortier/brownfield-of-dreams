@@ -11,8 +11,8 @@ ___
   * [Schema Design](#schema-design)
 * [Getting Started](#getting-started)
   * [Installation](#installation)
-  * [Deployment](#deployment)
   * [Testing](#testing)
+  * [Deployment](#deployment)
 * [Contributors](#contributors)
 
 ___
@@ -83,11 +83,13 @@ $ rake db:create
 $ rake db:migrate
 $ rake db:seed
 ```
+### Testing
 
 Run the test suite:
-```ruby
+```sh
 $ bundle exec rspec
 ```
+
 ### Deployment
 
 Create a new heroku app and connect to your local `BrownFieldOfDreams` repository with:
