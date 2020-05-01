@@ -64,13 +64,9 @@ You will also need a GitHub Application `client_id` and `client_secret` and defi
 To setup Brownfield Of Dreams locally, run the following commands:
 ```
 $ git clone https://github.com/adumortier/brownfield-of-dreams
-
 $ cd brownfield-of-dreams
-
 $ bundle install
-
 $ bundle update
-
 $ rails db:{drop,create,migrate,seed}
 ```
 
@@ -98,13 +94,12 @@ $ bundle exec rspec
 
 Create a new heroku app and connect to your local `BrownFieldOfDreams` repository with:
 ```
-heroku git:remote -a your_heroku_app_name
+$ heroku git:remote -a your_heroku_app_name
 ```
 
 Deploy `BrownFieldOfDreams` from Heroku.
 
 The original repository of the `BrownFieldOfDreams` project can be found [here](https://github.com/turingschool-examples/brownfield-of-dreams).
-
 
 ### Versions
 * Ruby 2.4.1
