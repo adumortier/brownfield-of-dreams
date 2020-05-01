@@ -8,7 +8,7 @@ ___
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-  * [Schema](#schema-design)
+  * [Schema Design](#schema-design)
 * [Getting Started](#getting-started)
   * [Installation](#installation)
   * [Deployment](#deployment)
